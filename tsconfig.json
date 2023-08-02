@@ -8,7 +8,7 @@
         "skipLibCheck": true,
         "moduleResolution": "bundler",
         "declaration": true,
-        "declarationMap": true,        
+        "declarationMap": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "react-jsx",

@@ -1,42 +1,40 @@
 {
     "sequences": [
-        {   
-        "sequenceId":"sequence_0",
-        "sequenceName":"hg38", 
-        "interFeatureTasks":{"compare":[],"correlate":[]},
-            "features":
-            [
-                { 
-                    "featureId":"feature_0",
-                    "featureGranularity":"point",
-                    "featureDensity":"sparse",
+        {
+            "sequenceId": "sequence_0",
+            "sequenceName": "hg38",
+            "interFeatureTasks": { "compare": [], "correlate": [] },
+            "features": [
+                {
+                    "featureId": "feature_0",
+                    "featureGranularity": "point",
+                    "featureDensity": "sparse",
                     "featureLabel": "Epigenetic Signal",
-                    "intraFeatureTasks":["outliers"],
-                    "interactivity":false,
-                    "attr":
-                    [
+                    "intraFeatureTasks": ["outliers"],
+                    "interactivity": false,
+                    "attr": [
                         {
-                            "attrId":"attribute_0",
-                            "dataType":"quantitative",
-                            "intraAttrTask":["identify","compare"],
+                            "attrId": "attribute_0",
+                            "dataType": "quantitative",
+                            "intraAttrTask": ["identify", "compare"],
                             "fileName": "BED1",
                             "encodingName": "Quantitative1",
                             "featureInterconnection": false,
                             "denseInterconnection": false
                         },
                         {
-                            "attrId":"attribute_1",
-                            "dataType":"quantitative",
-                            "intraAttrTask":["identify","compare"],
+                            "attrId": "attribute_1",
+                            "dataType": "quantitative",
+                            "intraAttrTask": ["identify", "compare"],
                             "fileName": "BED2",
                             "encodingName": "Quantitative1",
                             "featureInterconnection": false,
                             "denseInterconnection": false
                         },
                         {
-                            "attrId":"attribute_2",
-                            "dataType":"quantitative",
-                            "intraAttrTask":["identify","compare"],
+                            "attrId": "attribute_2",
+                            "dataType": "quantitative",
+                            "intraAttrTask": ["identify", "compare"],
                             "fileName": "BED2",
                             "encodingName": "Quantitative2",
                             "featureInterconnection": true,
@@ -45,8 +43,9 @@
                     ]
                 }
             ]
-    }],
-    "intraSequenceTask": {"connectedNodes":[],"sequenceConservation":[],"edgeValues":[]},
+        }
+    ],
+    "intraSequenceTask": { "connectedNodes": [], "sequenceConservation": [], "edgeValues": [] },
     "tasks": ["compareMultipleROI"],
     "connectionType": "none",
     "geneAnnotation": true,

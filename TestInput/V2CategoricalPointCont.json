@@ -21,9 +21,7 @@
                         {
                             "attrId": "attribute_0",
                             "dataType": "categorical",
-                            "intraAttrTask": [
-                                "identify"
-                            ],
+                            "intraAttrTask": ["identify"],
                             "featureInterconnection": false,
                             "denseInterconnection": false,
                             "fileName": "vcf1",
@@ -42,9 +40,7 @@
     "denseConnection": false,
     "sparseConnection": false,
     "connectionType": "none",
-    "tasks": [
-        ""
-    ],
+    "tasks": [""],
     "geneAnnotation": true,
     "ideogramDisplayed": false
 }
