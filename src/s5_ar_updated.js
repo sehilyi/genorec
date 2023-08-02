@@ -73,4 +73,4 @@ function getArrangementUpdated(input,networkData,tasks)
     return output;
 }
 
-module.exports = getArrangementUpdated;
+export default getArrangementUpdated;

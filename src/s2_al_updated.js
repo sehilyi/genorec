@@ -61,4 +61,4 @@ function getAlignmentUpdated(visoptions)
 }
 
 
-module.exports = getAlignmentUpdated
+export default getAlignmentUpdated;

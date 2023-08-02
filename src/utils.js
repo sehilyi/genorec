@@ -1,9 +1,9 @@
 //https://github.com/mljs/distance#ml-distance
 
-var dsMetric = require("ml-distance")
+import * as dsMetric from "ml-distance";
 var metric="cosine"
 
-function getProductProperties(model,vectorKeys){
+export function productProperties(model,vectorKeys){
   var getProductProperties = []
 
   var productKeys = Object.keys(model)
@@ -25,7 +25,7 @@ function getProductProperties(model,vectorKeys){
 // Description: Calculate the recommendation
 // Input: product and input vector
 // Output: similarity score corresponding to each output
-function computeSimilarity(inputVectorObject,productVector){
+export function computeSimilarity(inputVectorObject,productVector){
   var inpVec = inputVectorObject["inputArray"]
   var resultSimilarity = {}
   for (var i =0;i<productVector.length;i++){
@@ -40,7 +40,7 @@ function computeSimilarity(inputVectorObject,productVector){
 
 //Input: An object with vis techniques as keys and similarity scores. Additionally, key for the similarity metric to use.
 //Output: Array of recommendation. The array allows for mutiple output in the cases where the scores are exactly similar.
-function recommendedProducts (similarityScores)
+export function recommendedProducts (similarityScores)
 {
   
   let arr = Object.values(similarityScores);
@@ -68,7 +68,7 @@ function recommendedProducts (similarityScores)
 //Description: Test function to evaluate combinations of attributes
 //Input: Array of arrays that have to be combined
 //Output: All possible combinations of the arrays
-function cartesian(args) {
+export function cartesian(args) {
   var r = [], max = args.length-1;
   function helper(arr, i) {
       for (var j=0, l=args[i].length; j<l; j++) {
@@ -88,7 +88,7 @@ function cartesian(args) {
 //Output: Merge by performing a cartesian product. 
 //Output Schema: {'visid':[a:{information},b,c], 'visid2':[a,b]} 
 //Information: {featureid:[] ,encoding/s:[], layoutrecommendation} 
-function getVisOptions(tracks)
+export function getVisOptions(tracks)
 {
   var features = Object.keys(tracks)
   var trackPossibilitiesArray = features.map((val,i) =>{
@@ -163,7 +163,7 @@ const arrayToObject = (array, keyField) =>
 
 
 
-   function mode(array)
+   export function mode(array)
    {
        if(array.length == 0)
            return null;
@@ -186,7 +186,7 @@ const arrayToObject = (array, keyField) =>
    }
 
   //Check duplicate recommendation spec string
-  function checkDuplicates(inputArray)
+  export function checkDuplicates(inputArray)
   {
     var output = {}
     for(let i=0;i<inputArray.length-1;i++)
@@ -209,14 +209,14 @@ const arrayToObject = (array, keyField) =>
   }
 
   //Test if no attributes are provided in the input data
-  function checkMissingAttributes(input)
+  export function checkMissingAttributes(input)
   {
   return(input["sequences"].some(sequence=>{
     return sequence["features"].length === 0
   }));
   }
 
-  const coolerOutput = [{
+  export const coolerOutput = [{
     "viewPartition": "contiguous",
     "partitionPredictionScore": 0.5345224838248487,
     "views": [],
@@ -227,19 +227,3 @@ const arrayToObject = (array, keyField) =>
     "ideogramDisplayed": true,
     "tasks": []
 }]
-
-
-
-
-module.exports =
-{
-  productProperties: getProductProperties,
-  computeSimilarity: computeSimilarity,
-  recommendedProducts:  recommendedProducts ,
-  cartesian: cartesian,
-  getVisOptions: getVisOptions,
-  mode:mode,
-  checkDuplicates:checkDuplicates,
-  checkMissingAttributes:checkMissingAttributes,
-  coolerOutput: coolerOutput
-}

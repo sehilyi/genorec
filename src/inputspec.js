@@ -1,9 +1,10 @@
-const { data } = require("jquery");
+// const { data } = require("jquery");
 
-let GLOBAL_INDEX_DATA = {}
+export let GLOBAL_INDEX_DATA = {}
 
-function Dataspec(obj) {
-    dataSpec = {}
+export function Dataspec(obj) {
+    console.log(obj);
+    const dataSpec = {}
     dataSpec["sequences"] = [];
     dataSpec["intraSequenceTask"] = (typeof obj.intraSequenceTask =="object") ? obj.intraSequenceTask : (function(){throw "Interconnection should be an object"}());
     dataSpec["connectionType"] = (typeof obj.connectionType === "string") ?  obj.connectionType : (function(){throw "Connection Information must be 'none','dense','sparse type"}());
@@ -118,9 +119,4 @@ function Attributes(obj){
 
     return {attrId,dataDescriptor,dataType,intraAttrTask,interAttrTask,fileName,encodingName,featureInterconnection,denseInterconnection}
   
-}
-
-module.exports = {
-    Dataspec,
-    GLOBAL_INDEX_DATA
 }

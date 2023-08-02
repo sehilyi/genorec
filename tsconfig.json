@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "ES2020",
+        "useDefineForClassFields": true,
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
+        "skipLibCheck": true,
+        "moduleResolution": "bundler",
+        "declaration": true,
+        "declarationMap": true,        
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "strict": true,
+        "noEmit": true,
+        "types": ["vitest/globals"]
+    },
+    "include": ["demo"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}

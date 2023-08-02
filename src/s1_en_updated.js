@@ -72,4 +72,4 @@ function encodeAttributeUpdated(dataspec,tasks){
     return output;
 }
 
-module.exports = encodeAttributeUpdated
+export default encodeAttributeUpdated;

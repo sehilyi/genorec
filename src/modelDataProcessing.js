@@ -1,6 +1,6 @@
-const stage1Model = require('../model/stage1.json');
-const stage3Model = require('../model/stage3.json');
-const stage5Model = require('../model/stage5.json');
+import stage1Model from '../model/stage1.json';
+import stage3Model from '../model/stage3.json';
+import stage5Model from '../model/stage5.json';
 
 
 //Converting the model to objects

@@ -75,4 +75,4 @@ function getPartitionUpdated(input,tasks,network)
 }
 
 
-module.exports = getPartitionUpdated
+export default getPartitionUpdated;

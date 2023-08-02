@@ -79,4 +79,4 @@ function getLayoutUpdated(visOptions,tasks,viewConnectionType)
     return output    
 }
 
-module.exports = getLayoutUpdated
+export default getLayoutUpdated;
