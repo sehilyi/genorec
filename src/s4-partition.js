@@ -1,4 +1,4 @@
-import * as globalData from './modelDataProcessing.js';
+import * as globalData from './model-data-processing.js';
 import {
     productProperties as getProductProperties,
     recommendedProducts,

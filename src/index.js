@@ -1,14 +1,14 @@
-import { Dataspec } from './inputspec.js';
+import { Dataspec } from './input-spec.js';
 import { checkDuplicates } from './utils.js';
 import { checkMissingAttributes } from './utils.js';
 import { coolerOutput } from './utils.js';
 
 //Updated variables
-import encodeAttributeUpdated from './s1_en_updated.js';
-import getAlignmentUpdated from './s2_al_updated.js';
-import getLayoutUpdated from './s3_ls_updated.js';
-import getPartitionUpdated from './s4_pt_updated.js';
-import getArrangementUpdated from './s5_ar_updated.js';
+import encodeAttributeUpdated from './s1-encoding.js';
+import getAlignmentUpdated from './s2-alignment.js';
+import getLayoutUpdated from './s3-layout.js';
+import getPartitionUpdated from './s4-partition.js';
+import getArrangementUpdated from './s5-arrangement.js';
 
 export function getRecommendation(param) {
     let attrMissing = checkMissingAttributes(param);

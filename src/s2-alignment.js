@@ -1,4 +1,4 @@
-import * as globalData from './modelDataProcessing.js';
+import * as globalData from './model-data-processing.js';
 const model = globalData.model2Updated;
 import { productProperties as getProductProperties, computeSimilarity, recommendedProducts } from './utils.js';
 // const { GLOBAL_INDEX_DATA } = require("./inputspec.js");
