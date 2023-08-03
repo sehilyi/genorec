@@ -1,23 +1,22 @@
-//https://github.com/mljs/distance#ml-distance
-
-import * as dsMetric from 'ml-distance';
-var metric = 'cosine';
+// Reference: https://github.com/mljs/distance#ml-distance
+import { similarity as mlSim } from 'ml-distance';
+const SIMILARITY_METRIC = 'cosine';
 
 export function productProperties(model, vectorKeys) {
     var getProductProperties = [];
-
     var productKeys = Object.keys(model);
 
-    for (var i = 0; i < productKeys.length; i++) {
-        var currentProduct = productKeys[i];
+    productKeys.forEach(currentProduct => {
         var tempgetProductProperties = {};
 
         tempgetProductProperties[currentProduct] = [];
         vectorKeys.map(val => {
-            tempgetProductProperties[currentProduct].push(parseInt(model[currentProduct][val]));
+            const value = +model[currentProduct][val];
+            tempgetProductProperties[currentProduct].push(value);
         });
+
         getProductProperties.push(tempgetProductProperties);
-    }
+    });
     return getProductProperties;
 }
 
@@ -31,7 +30,7 @@ export function computeSimilarity(inputVectorObject, productVector) {
         var obj = productVector[i];
         var key = Object.keys(obj)[0];
         var proVec = obj[key];
-        var similarity = dsMetric.similarity[metric](inpVec, proVec);
+        var similarity = mlSim[SIMILARITY_METRIC](inpVec, proVec);
         resultSimilarity[key] = similarity;
     }
     return resultSimilarity;

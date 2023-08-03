@@ -1,4 +1,7 @@
 {
+    "connectionType": "none",
+    "geneAnnotation": false,
+    "ideogramDisplayed": false,
     "sequences": [
         {
             "sequenceId": "sequence_0",
@@ -18,17 +21,20 @@
                         {
                             "attrId": "attribute_0",
                             "dataType": "quantitative",
-                            "intraAttrTask": ["identify", "compare"]
+                            "intraAttrTask": ["identify", "compare"],
+                            "encodingName": "Quantitative0"
                         },
                         {
                             "attrId": "attribute_1",
                             "dataType": "quantitative",
-                            "intraAttrTask": ["identify", "compare"]
+                            "intraAttrTask": ["identify", "compare"],
+                            "encodingName": "Quantitative1"
                         },
                         {
                             "attrId": "attribute_2",
                             "dataType": "quantitative",
-                            "intraAttrTask": ["identify", "compare"]
+                            "intraAttrTask": ["identify", "compare"],
+                            "encodingName": "Quantitative2"
                         }
                     ]
                 }

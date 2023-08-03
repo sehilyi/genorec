@@ -1,4 +1,4 @@
-import * as globalData from './model-data-processing.js';
+import globalData from './model-data-processing.js';
 import {
     productProperties as getProductProperties,
     recommendedProducts,
@@ -64,7 +64,7 @@ function createInputVector(specs, tasks, network) {
     return { inputVectorObject, inputArray };
 }
 
-function getPartitionUpdated(input, tasks, network) {
+export default function partition(input, tasks, network) {
     const vectorKeys = [
         'd_multivars',
         'd_multisequences',
@@ -92,5 +92,3 @@ function getPartitionUpdated(input, tasks, network) {
 
     return output;
 }
-
-export default getPartitionUpdated;

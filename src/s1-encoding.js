@@ -1,4 +1,4 @@
-import * as globalData from './model-data-processing.js';
+import globalData from './model-data-processing.js';
 import {
     productProperties as getProductProperties,
     computeSimilarity,
@@ -28,7 +28,7 @@ function createInputVector(feature, attribute, task) {
     return { inputVectorObject, inputArray };
 }
 
-function encodeAttributeUpdated(dataspec, tasks) {
+export default function encoding(dataspec, tasks) {
     // const model = require('../model/stage1updated.json');
     const vectorKeys = [
         'd_quantitative',
@@ -42,6 +42,7 @@ function encodeAttributeUpdated(dataspec, tasks) {
     ];
     // const globalData = require('./modelDataProcessing.js');
     const stage1Model = globalData.model1Updated;
+
     // const stage1Products = Object.keys(stage1Model);
     // const getProductProperties = require('./utils.js').productProperties;
     // const computeSimilarity = require('./utils.js').computeSimilarity;
@@ -94,5 +95,3 @@ function encodeAttributeUpdated(dataspec, tasks) {
     const output = cartesian(stage1Output);
     return output;
 }
-
-export default encodeAttributeUpdated;

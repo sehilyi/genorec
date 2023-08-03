@@ -1,11 +1,12 @@
-import * as globalData from './model-data-processing.js';
-const model = globalData.model2Updated;
+import globalData from './model-data-processing.js';
+const model = globalData.model3Updated;
 import { productProperties as getProductProperties, computeSimilarity, recommendedProducts } from './utils.js';
 
 function createInputVector(spec, tasks, stage1, viewConnectionType) {
     var inputVectorObject = {};
     var inputArray = [];
-    //Network Connections
+
+    // Network Connections
     const featureInterconnection = spec['tracks'].some(val => val['featureInterconnection']);
     const denseInterconnection = spec['tracks'].some(val => val['denseInterconnection']);
     const sparseInterconnection = !denseInterconnection;
@@ -18,11 +19,11 @@ function createInputVector(spec, tasks, stage1, viewConnectionType) {
         (inputVectorObject['d_denseinterconnection'] = denseInterconnection && featureInterconnection ? 1 : 0)
     );
 
-    //Tasks
+    // Tasks
     inputArray.push((inputVectorObject['t_identify'] = 1));
     inputArray.push((inputVectorObject['t_overview'] = tasks.includes('overview') ? 1 : 0));
 
-    //Encoding
+    // Encoding
     var channels = spec['tracks'].map(val => {
         return stage1[val['encoding']]['channel'];
     });
@@ -36,10 +37,8 @@ function createInputVector(spec, tasks, stage1, viewConnectionType) {
     return { inputVectorObject, inputArray };
 }
 
-function getLayoutUpdated(visOptions, tasks, viewConnectionType) {
-    // const globalData = require('./modelDataProcessing.js');
-    // const model = globalData.model3Updated;
-    const stage1Model = globalData.model1Updated;
+export default function layout(visOptions, tasks, viewConnectionType) {
+    // const stage3Model = globalData.model3Updated;
     const vectorKeys = [
         'd_viewconnection',
         'd_sparseinterconnection',
@@ -55,13 +54,14 @@ function getLayoutUpdated(visOptions, tasks, viewConnectionType) {
     // const recommendedProducts = require('./utils.js').recommendedProducts;
     const productVector = getProductProperties(model, vectorKeys);
     const output = [];
-
+    console.log(productVector);
     visOptions.forEach(element => {
-        const inputVectorObject = createInputVector(element, tasks, stage1Model, viewConnectionType);
+        const inputVectorObject = createInputVector(element, tasks, globalData.model1Updated, viewConnectionType);
         const similarityScores = computeSimilarity(inputVectorObject, productVector);
         const recommendation = recommendedProducts(similarityScores);
-
+        
         recommendation.forEach(rec => {
+            
             // var tempOutput;
             var tracksTemp = [];
             element['tracks'].forEach(track => {
@@ -101,5 +101,3 @@ function getLayoutUpdated(visOptions, tasks, viewConnectionType) {
 
     return output;
 }
-
-export default getLayoutUpdated;

@@ -1,6 +1,6 @@
-import * as globalData from './model-data-processing.js';
+import globalData from './model-data-processing.js';
 import { productProperties as getProductProperties, computeSimilarity, recommendedProducts } from './utils.js';
-const model = globalData.model2Updated;
+const model = globalData.model5Updated;
 
 function createInputVector(views, network, tasks) {
     const inputVectorObject = {};
@@ -45,7 +45,7 @@ function createInputVector(views, network, tasks) {
     return { inputVectorObject, inputArray };
 }
 
-function getArrangementUpdated(input, networkData, tasks) {
+export default function arrangement(input, networkData, tasks) {
     const vectorKeys = [
         'd_nointerconnection',
         'd_sparseinterconnection',
@@ -92,5 +92,3 @@ function getArrangementUpdated(input, networkData, tasks) {
 
     return output;
 }
-
-export default getArrangementUpdated;

@@ -1,5 +1,3 @@
-// const { data } = require("jquery");
-
 export let GLOBAL_INDEX_DATA = {};
 
 export function Dataspec(obj) {

@@ -1,4 +1,4 @@
-import * as globalData from './model-data-processing.js';
+import globalData from './model-data-processing.js';
 const model = globalData.model2Updated;
 import { productProperties as getProductProperties, computeSimilarity, recommendedProducts } from './utils.js';
 // const { GLOBAL_INDEX_DATA } = require("./inputspec.js");
@@ -14,10 +14,12 @@ function createInputVector(spec) {
 
     //Data Type
     const allDataType = spec.map(val => val['encodingName']);
+    
     const allDataTypeSame =
         allDataType.every(val => val.includes('Categorical')) ||
         allDataType.every(val => val.includes('Quantitative')) ||
         allDataType.every(val => val.includes('Text'));
+
     inputArray.push((inputVectorObject['d_samedatatype'] = allDataTypeSame ? 1 : 0));
     inputArray.push((inputVectorObject['d_differentdatatype'] = !allDataTypeSame ? 1 : 0));
 
@@ -36,7 +38,7 @@ function createInputVector(spec) {
     return { inputVectorObject, inputArray };
 }
 
-function getAlignmentUpdated(visoptions) {
+export default function alignment(visoptions) {
     // console.log(GLOBAL_INDEX_DATA)
 
     const vectorKeys = [
@@ -51,6 +53,7 @@ function getAlignmentUpdated(visoptions) {
     ];
 
     const productVector = getProductProperties(model, vectorKeys);
+    
     const output = [];
 
     visoptions.forEach(element => {
@@ -72,5 +75,3 @@ function getAlignmentUpdated(visoptions) {
 
     return output;
 }
-
-export default getAlignmentUpdated;

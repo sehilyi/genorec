@@ -4,9 +4,32 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>GenoREC</title>
+        <link rel="stylesheet" href="https://unpkg.com/higlass@1.12.4/dist/hglib.css">
+        <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/pixi.js@6/dist/browser/pixi.min.js"></script>
+        <script src="https://unpkg.com/higlass@1.12.4/dist/hglib.js"></script>
+        <script src="https://unpkg.com/gosling.js@0.10.1/dist/gosling.js"></script>
     </head>
     <body>
-        See console messages for output.
-        <script type="module" src="./index.js"></script>
+        <p id="input" style="position: fixed; right: 0;"></p>
+        <div id="gosling-container"></div>
+        <script type="module">
+            import * as genorec from '../src/index';
+            import ExampleInput from '../test/V2UpdatedInput.json';
+            import { genorecToGosling } from '../src/gosling/convert';
+
+            document.getElementById('input').innerHTML = "<pre>" + JSON.stringify(ExampleInput, null, 2) + "</pre>";
+
+            const goslingSpec = genorecToGosling(genorec.recommend(ExampleInput), 400)[0];
+
+            gosling.embed(
+                document.getElementById('gosling-container'),
+                goslingSpec
+            );
+
+            console.warn('GenoREC Output:', ExampleInput);
+            console.warn('Gosling Spec:', goslingSpec);
+        </script>
     </body>
 </html>
