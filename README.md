@@ -1,7 +1,7 @@
 # GenoREC
 GenoREC is a JavaScript library recommending genome-mapped data visualizations based on data and task descriptions.
 
-This fork _will_ have several changes to the original implementation ([aditeyapandey/Genorec-Engine](https://github.com/aditeyapandey/Genorec-Engine)) to be used more conveniently in a [Gosling.js](https://github.com/gosling-lang/gosling.js)-based user interface.
+This fork _will_ have several changes to the original implementation ([aditeyapandey/Genorec-Engine](https://github.com/aditeyapandey/Genorec-Engine)), which will make the integration of [Gosling.js](https://github.com/gosling-lang/gosling.js)-based user interfaces more convenient.
 
 <!-- 
 
