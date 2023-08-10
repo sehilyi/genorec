@@ -1,7 +1,7 @@
 {
     "name": "genorec",
     "description": "A recommendation engine for genome-mapped data visualization",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "author": "Aditeya Pandey <aditeyapandey@gmail.com> (http://www.aditeyapandey.com/) and Sehi L'Yi <sehilyi@gmail.com> (http://sehilyi.com)",
     "repository": {
         "type": "git",
