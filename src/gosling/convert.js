@@ -1,7 +1,6 @@
 import { encodingToTrack } from "./encoding";
 import { getGeneAnnotation } from "./gene-annotation";
 import { getIdeogram, getOverview } from "./ideogram";
-// import { getIdeogram } from "./ideogram";
 
 // A flag variable to print log messages while debugging
 export const IS_DEBUG_RECOMMENDATION_PANEL = false;

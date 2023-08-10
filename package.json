@@ -1,19 +1,18 @@
 {
     "name": "genorec",
     "description": "A recommendation engine for genome-mapped data visualization",
-    "version": "0.0.1",
+    "version": "0.0.0",
     "author": "Aditeya Pandey <aditeyapandey@gmail.com> (http://www.aditeyapandey.com/) and Sehi L'Yi <sehilyi@gmail.com> (http://sehilyi.com)",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/sehilyi/genorec.git"
     },
-    "main": "dist/index.js",
-    "module": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/index.mjs",
+    "module": "dist/index.mjs",
     "license": "MIT",
     "scripts": {
         "dev": "vite --port 3000",
-        "build": "rm -rf dist && tsc --emitDeclarationOnly -p tsconfig.build.json && vite build --mode lib",
+        "build": "rm -rf dist && vite build --mode lib",
         "test": "vitest",
         "lint": "eslint src --fix --ext js,ts --report-unused-disable-directives && prettier --write *",
         "csv2json": "csvtojson  model/stage1.csv > model/stage1.json  && csvtojson model/stage3.csv > model/stage3.json && csvtojson model/stage5.csv > model/stage5.json && csvtojson model/stage1updated.csv > model/stage1updated.json && csvtojson model/stage2updated.csv > model/stage2updated.json && csvtojson model/stage3updated.csv > model/stage3updated.json && csvtojson model/stage4updated.csv > model/stage4updated.json  && csvtojson model/stage5updated.csv > model/stage5updated.json "
